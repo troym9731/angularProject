@@ -85,4 +85,19 @@ tdControllers.controller('DeleteCarCtrl', ['$scope', '$routeParams', '$location'
   }
 ])
 
+tdControllers.controller('LoginCtrl', ['$scope', '$routeParams', '$location', 'User',
+  function($scope, $routeParams, $location, User) {
+    $scope.login = function() {
+        var name = document.querySelector('input').value;
+        User.query(function(users) {
+          users.forEach(function(user) {
+            if (name === user.name) {
+              $location.path('/user/' + user.id + '/edit');
+            }
+          })
+        })
+    }
+  }
+])
+
 module.exports = tdControllers;
