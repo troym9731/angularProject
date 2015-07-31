@@ -1,0 +1,15 @@
+ <div> 
+  <figure class="user" ng-repeat="user in users" ng-controller="DeleteUserCtrl">
+    <div>
+      <img src="{{user.img}}">
+    </div>
+    <figcaption data-id="{{user.id}}">
+      <h3>Driver: {{user.name}}</h3>
+      <h3>Hobby: {{user.hobby}}</h3>
+      <div class="links">
+        <a href="/#/user/{{user.id}}/edit">Edit</a> |
+        <a href="/#/user/{{user.id}}/delete" ng-click="delete(user)">Delete</a>
+      </div>
+    </figcaption>
+  </figure>
+</div>

@@ -1,0 +1,19 @@
+<div>
+  <div ng-repeat="car in cars" ng-controller="DeleteCarCtrl">
+    <figure data-id="{{car.id}}" class="car">
+      <div><img src="{{car.img}}"></div>
+      <figcaption>
+        <h1>Make: {{car.make}}</h1>
+        <h2>{{car.price}}</h2>
+        <h3>Model: {{car.model}}</h3>
+        <h3>HP: {{car.horsepower}}</h3>
+        <div>
+          <a href="/#/car/{{car.id}}/edit">Edit</a> |
+          <a href="/#/car/{{car.id}}/delete" ng-click='delete(car)'>Delete</a>
+        </div>
+      </figcaption>
+    </figure>
+  </div>
+
+  <a class="btn new-car" href="/#/car/add">Add New Car</a>
+</div>
